@@ -22,3 +22,6 @@ upgrade-go: # <5>
 
 build:
 	go build -o api cmd/main.go
+
+depend:
+	go mod tidy

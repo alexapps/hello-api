@@ -4,8 +4,6 @@ import (
 	"encoding/json"
 	"log"
 	"net/http"
-
-	"github.com/pkg/errors"
 )
 
 func main() {
@@ -21,15 +19,14 @@ func main() {
 				Language:    "English",
 				Translation: "Hello",
 			}
-
 			if err := enc.Encode(resp); err != nil {
-				panic(errors.Wrap(err, "unable to encode responce"))
+				panic("unable to encode response")
 			}
-
-			log.Printf("listening on %s\n", addr)
-
-			log.Fatal(http.ListenAndServe(addr, mux))
 		})
+
+	log.Printf("listening on %s\n", addr)
+
+	log.Fatal(http.ListenAndServe(addr, mux))
 }
 
 type Resp struct {
