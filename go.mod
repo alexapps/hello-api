@@ -1,3 +1,3 @@
 module github.com/alexapps/hello-api
 
-go 1.18
+go 1.21
