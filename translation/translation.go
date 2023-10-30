@@ -1,15 +1,18 @@
 package translation
 
-import "strings"
+import (
+	"fmt"
+	"strings"
+)
 
 func Translate(word string, language string) string {
 	word = sanitizeInput(word)
 	language = sanitizeInput(language)
-
+	fmt.Println("Translate: word", word)
 	if word != "hello" {
 		return ""
 	}
-
+	fmt.Println("Translate: language", language)
 	switch language {
 	case "english":
 		return "hello"

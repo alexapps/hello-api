@@ -17,7 +17,7 @@ func TestTranslate(t *testing.T) {
 		Translation string
 	}{
 		{
-			Word:        "hallo",
+			Word:        "hello",
 			Language:    "English",
 			Translation: "hello",
 		},
@@ -43,7 +43,7 @@ func TestTranslate(t *testing.T) {
 		res := translation.Translate(test.Word, test.Language)
 
 		// Assert
-		assert.Equal(t, res, test.Translation, "they should be equal")
+		assert.Equal(t, test.Translation, res, "they should be equal")
 
 	}
 }
